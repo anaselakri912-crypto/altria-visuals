@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Altria Visuals – Fotografía Profesional Bilbao</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0d0d0d;
+  color: white;
+  margin: 0;
+}
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 17px;
+  opacity: 0.85;
+  max-width: 700px;
+  margin: auto;
+}
+.btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+}
+.btn-main { background: white; color: black; }
+.btn-alt { background: #222; color: white; }
+
+.qr-box {
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  display:inline-block;
+}
+
+details {
+  padding:18px;
+  background:#111;
+  margin:12px auto;
+  max-width: 700px;
+  border-radius:10px;
+}
+summary {
+  font-size:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Hero -->
+<div class="section">
+  <h1>Altria Visuals</h1>
+  <p>Fotografía profesional para negocios, locales, bares, y empresas en Bilbao.  
+  Transformamos tu presencia online con imágenes de alta calidad para páginas web, redes y publicidad.</p>
+  
+  <button class="btn btn-main">Ver Portfolio</button>
+  <button class="btn btn-alt">Contactar</button>
+</div>
+
+<!-- Servicios -->
+<div class="section">
+  <h2>Servicios</h2>
+
+  <p>📸 Fotografía profesional de locales  
+  🏪 Fotos para páginas web  
+  📱 Contenido para redes sociales  
+  🎥 Mini clips en vídeo (opcional)  
+  🖼 Edición avanzada y optimización web</p>
+</div>
+
+<!-- Precios -->
+<div class="section">
+  <h2>Packs y Precios</h2>
+
+  <details>
+    <summary>Pack Básico – 49€</summary>
+    <p>10 fotos profesionales, edición incluida, entrega en 24h.</p>
+  </details>
+
+  <details>
+    <summary>Pack Estándar – 79€</summary>
+    <p>20 fotos + mini vídeo + edición avanzada.</p>
+  </details>
+
+  <details>
+    <summary>Pack Premium – 120€</summary>
+    <p>40 fotos + vídeo profesional + material para redes.</p>
+  </details>
+</div>
+
+<!-- Contacto -->
+<div class="section">
+  <h2>Contacto</h2>
+  <p>Estamos en Bilbao.  
+  Escríbenos y te respondemos en minutos:</p>
+
+  <p>Email: <b>altriavisuals@gmail.com</b><br>
+  Instagram: <b>@altria.visuals</b></p>
+</div>
+
+</body>
+</html>
