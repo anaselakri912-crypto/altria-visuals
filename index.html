@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Altria.Visuals – Fotografía Profesional en Bilbao</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ESTILOS PREMIUM -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  max-width: 550px;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn:hover {
+  transform: scale(1.07);
+  background: #e6e6e6;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.section p {
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* GALERÍA */
+.gallery {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* PRICING */
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 450px;
+  border: 1px solid #333;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* CONTACTO */
+.contact-info {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  line-height: 2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Altria.Visuals</h1>
+  <p>Fotografía premium y contenido profesional para negocios, locales y marcas en Bilbao.</p>
+  <a href="#portfolio"><button class="btn">Ver Portfolio</button></a>
+</div>
+
+<!-- SERVICIOS -->
+<div class="section" id="servicios">
+  <h2>Servicios</h2>
+  <p>Fotografía profesional para empresas, locales, restaurantes, marcas y proyectos personales.
+     Contenido visual de máxima calidad para webs, redes y publicidad.</p>
+</div>
+
+<!-- GALERÍA -->
+<div class="section" id="portfolio">
+  <h2>Portfolio</h2>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" />
+    <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=800&q=80" />
+    <img src="https://images.unsplash.com/photo-1526178617012-1be37f2c43a2?auto=format&fit=crop&w=800&q=80" />
+    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" />
+  </div>
+</div>
+
+<!-- PRECIOS -->
+<div class="section" id="precios">
+  <h2>Packs y Precios</h2>
+
+  <div class="card">
+    <h3>Pack Básico – 49€</h3>
+    <p>10 fotos profesionales, edición completa y entrega en 24h.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pack Estándar – 79€</h3>
+    <p>20 fotos + mini vídeo + edición avanzada.</p>
+  </div>
+
+  <div class="card">
+    <h3>Pack Premium – 120€</h3>
+    <p>40 fotos + vídeo profesional + material para redes sociales.</p>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="section" id="contacto">
+  <h2>Contacto</h2>
+  <p class="contact-info">
+    📩 Email: <b>altriavisuals@gmail.com</b><br>
+    📷 Instagram: <b>@altria.visuals</b><br>
+    📍 Bilbao
+  </p>
+</div>
+
+</body>
+</html>
