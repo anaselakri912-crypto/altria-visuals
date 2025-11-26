@@ -1,180 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Altria.Visuals — Fotografía & Contenido Profesional para Bares en Bilbao</title>
-<meta name="description" content="Altria.Visuals - Fotografía profesional para bares, locales y negocios en Bilbao. Packs, portfolio y reservas." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altria.Visuals — Fotografía Profesional en Bilbao</title>
+
+<meta name="description" content="Altria.Visuals — Fotografía profesional para bares y locales con estilo premium. Contenido visual que vende más, calidad rápida y precios accesibles.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
+/* ======================================================
+   PALETA Y BASE PREMIUM
+====================================================== */
 :root{
-  --bg:#070707;
-  --card:#0f0f10;
-  --muted:#bdbdbd;
-  --accent:#d9b84c; /* dorado llamativo */
-  --glass: rgba(255,255,255,0.04);
+  --bg:#050505;
+  --bg2:#0a0a0a;
+  --gold:#d9b84c;
+  --gold-light:#f3e3a1;
+  --text:#ffffff;
+  --muted:#bfbfbf;
+  --glass:rgba(255,255,255,0.07);
   --radius:14px;
   --maxw:1200px;
 }
 
-/* Reset simple */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  background:linear-gradient(180deg,#060606 0%, #0b0b0b 60%);
-  color:#fff;
-  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
+  font-family:"Poppins",sans-serif;
+  background:var(--bg);
+  color:var(--text);
   overflow-x:hidden;
+  position:relative;
 }
 
-/* Top bar / header */
+/* ======================================================
+   PARTICULAS DORADAS PREMIUM
+====================================================== */
+body::before{
+  content:"";
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,215,100,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,215,100,0.06), transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(255,215,100,0.04), transparent 60%);
+  z-index:-3;
+  animation:glowMove 12s infinite alternate linear;
+}
+@keyframes glowMove{
+  0%{transform:translateY(0)}
+  100%{transform:translateY(-20px)}
+}
+
+/* ======================================================
+   CABECERA PREMIUM
+====================================================== */
 .header{
-  position:fixed;top:16px;left:0;right:0;z-index:80;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:20px;padding:12px 28px;margin:0 auto;max-width:var(--maxw);
-  backdrop-filter: blur(6px);
+  position:fixed;top:0;left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 26px;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(10px);
+  z-index:99;
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 .brand{
-  display:flex;align-items:center;gap:12px;
-  background:linear-gradient(90deg, rgba(217,184,76,0.12), rgba(217,184,76,0.06));
-  padding:8px 12px;border-radius:12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  display:flex;align-items:center;gap:10px;
 }
 .logo-mark{
-  width:46px;height:46px;border-radius:10px;
+  width:42px;height:42px;border-radius:10px;
+  background:linear-gradient(140deg,#111,#222);
+  border:1px solid rgba(255,255,255,0.1);
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#111, #222);
-  border:1px solid rgba(255,255,255,0.04);
-  font-family: "Playfair Display", serif;
-  font-weight:700;color:var(--accent);
-  font-size:18px;letter-spacing:0.6px;
-}
-.brand h1{font-size:16px;font-weight:700;letter-spacing:0.6px}
-.nav{
-  display:flex;gap:18px;align-items:center;
+  font-family:"Playfair Display",serif;
+  font-size:19px;font-weight:700;color:var(--gold);
 }
 .nav a{
-  color:#fff;text-decoration:none;font-weight:600;font-size:14px;opacity:0.92;
-  transition:all .24s ease;
+  margin-left:16px;
+  text-decoration:none;color:var(--text);
+  font-weight:600;
+  transition:.3s;
 }
-.nav a:hover{color:var(--accent);transform:translateY(-2px)}
+.nav a:hover{color:var(--gold);}
 
-/* Hero full-screen */
+/* ======================================================
+   HERO PARALLAX
+====================================================== */
 .hero{
-  min-height:90vh;display:flex;align-items:center;justify-content:center;
-  padding:28px 20px 60px;position:relative;margin-top:22px;
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.36), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;background-position:center;
+  min-height:92vh;
+  padding-top:100px;
+  display:flex;justify-content:center;align-items:center;
+  position:relative;
+  overflow:hidden;
 }
-.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:center;padding:40px}
-.hero-copy h2{
-  font-family:"Playfair Display",serif;font-size:48px;color:#fff;margin-bottom:12px;line-height:1.02;
-  text-shadow: 0 12px 32px rgba(0,0,0,0.6);
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80") center/cover;
+  z-index:-2;
+  transform:scale(1.12);
+  animation:heroMove 18s ease-in-out infinite alternate;
+  filter:brightness(0.55);
 }
-.hero-copy p{color:var(--muted);font-size:18px;margin-bottom:18px;max-width:620px}
-.ctas{display:flex;gap:12px;flex-wrap:wrap}
+@keyframes heroMove{
+  0%{transform:scale(1.12) translateY(0)}
+  100%{transform:scale(1.18) translateY(20px)}
+}
+
+.hero-inner{
+  text-align:left;
+  max-width:900px;
+  padding:20px;
+}
+.hero-inner h2{
+  font-family:"Playfair Display",serif;
+  font-size:50px;
+  color:var(--text);
+  line-height:1.1;
+  position:relative;
+  display:inline-block;
+}
+
+/* TÍTULO DORADO BRILLANTE */
+.hero-inner h2::after{
+  content:"";
+  position:absolute;
+  top:0;left:-50%;
+  width:70%;height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform:skewX(-20deg);
+  animation:shine 4s infinite;
+}
+@keyframes shine{
+  0%{left:-60%}
+  100%{left:120%}
+}
+
+.hero-inner p{
+  font-size:20px;color:var(--muted);margin:18px 0 26px;
+}
+
+/* ======================================================
+   BOTONES PREMIUM
+====================================================== */
 .btn{
-  padding:14px 26px;border-radius:999px;font-weight:700;border:none;cursor:pointer;text-decoration:none;
-  display:inline-flex;align-items:center;gap:10px;
-  transition:transform .22s ease, box-shadow .22s ease;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.5);
+  padding:14px 30px;border-radius:50px;
+  font-weight:700;text-decoration:none;
+  display:inline-block;
+  border:2px solid var(--gold);
+  transition:.3s;
 }
-.btn-primary{background:var(--accent);color:#071;padding:12px 26px}
-.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)}
-
-/* Card en hero (reservas rápidas) */
-.hero-card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.6);
-  color:var(--muted);
+.btn-primary{
+  background:var(--gold);
+  color:#222;
 }
-.hero-card h4{color:var(--accent);margin-bottom:8px;font-weight:700}
-.hero-card p{font-size:14px;opacity:0.95}
-.quick-row{display:flex;gap:10px;margin-top:12px}
-
-/* Small animated marquee */
-.marquee{
-  margin-top:18px;padding:10px 0;color:var(--muted);font-size:14px;
-  border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);
+.btn-primary:hover{
+  background:var(--gold-light);
 }
-.marquee .inner{display:inline-block;white-space:nowrap;animation:marq 18s linear infinite}
-@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* Sections */
-.section{padding:80px 20px;max-width:var(--maxw);margin:0 auto}
-.section h3{font-size:32px;color:var(--accent);margin-bottom:14px;font-family:"Playfair Display",serif}
-.section p{color:var(--muted);font-size:17px;line-height:1.7;max-width:900px;margin:0 auto}
-
-/* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-.gallery img{width:100%;height:260px;object-fit:cover;border-radius:12px;transition:transform .45s ease, filter .45s ease}
-.gallery img:hover{transform:scale(1.04);filter:brightness(1.05)}
-
-/* Sobre nosotros (persuasivo) */
-.about{
-  display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:16px;
+.btn-outline{
+  background:transparent;
+  color:var(--gold);
 }
-.about .text p {margin-bottom:14px;font-size:16px}
-.badges{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
-.badge{background:linear-gradient(90deg, rgba(217,184,76,0.12), rgba(217,184,76,0.06));padding:8px 12px;border-radius:999px;color:var(--accent);font-weight:700;border:1px solid rgba(255,255,255,0.03)}
+.btn-outline:hover{
+  color:#222;
+  background:var(--gold);
+}
 
-/* Pricing / packs */
-.prices{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:20px}
-.pack{background:var(--card);padding:22px;border-radius:14px;min-width:260px;border:1px solid rgba(255,255,255,0.03);text-align:left}
-.pack h4{color:var(--accent);margin-bottom:8px}
-.pack p{color:var(--muted)}
+/* ======================================================
+   SECCIONES
+====================================================== */
+.section{
+  padding:90px 20px;
+  max-width:var(--maxw);
+  margin:auto;
+}
+.section h3{
+  font-family:"Playfair Display",serif;
+  font-size:38px;
+  color:var(--gold);
+  text-align:center;
+  margin-bottom:12px;
+}
+.section p{
+  text-align:center;
+  font-size:18px;color:var(--muted);
+  max-width:900px;margin:auto;
+}
 
-/* Testimonials (animated) */
-.testimonials{margin-top:26px;display:flex;gap:16px;overflow:hidden}
-.testimonial{min-width:320px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.testimonial p{font-size:15px;color:var(--muted);margin-bottom:8px}
-.testimonial small{display:block;color:#9a9a9a}
+/* ======================================================
+   GALERÍA PREMIUM
+====================================================== */
+.gallery{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.gallery img{
+  width:100%;height:270px;object-fit:cover;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.15);
+  transition:.5s;
+  filter:brightness(0.85);
+}
+.gallery img:hover{
+  transform:scale(1.05);
+  filter:brightness(1);
+  border-color:var(--gold);
+}
 
-/* Contact - visual */
-.contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;margin-top:18px}
-.contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.contact-card h4{color:var(--accent);margin-bottom:6px}
-.contact-card a{color:#fff;text-decoration:none;font-weight:700;display:inline-block;margin-top:8px}
+/* ======================================================
+   TARJETAS GLASS
+====================================================== */
+.card{
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:22px;border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
 
-/* Footer small print */
-.footer{margin-top:60px;padding:28px 20px;background:transparent;border-top:1px solid rgba(255,255,255,0.03);color:#9a9a9a;font-size:13px;text-align:center}
-.legal{max-width:var(--maxw);margin:0 auto;padding:12px 18px;border-radius:10px;opacity:0.9}
+/* ======================================================
+   ANIMACIONES SCROLL
+====================================================== */
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+.fade-up.visible{
+  opacity:1;
+  transform:none;
+}
 
 /* Responsive */
-@media (max-width:1000px){
-  .hero-inner{grid-template-columns:1fr; padding:20px}
+@media(max-width:900px){
   .gallery{grid-template-columns:repeat(2,1fr)}
-  .about{grid-template-columns:1fr}
-  .contact-wrap{grid-template-columns:1fr}
+  .hero-inner h2{font-size:36px}
 }
-@media (max-width:600px){
-  .gallery img{height:180px}
-  .hero-copy h2{font-size:32px}
+@media(max-width:600px){
+  .gallery{grid-template-columns:1fr}
 }
-
-/* subtle entrance animations */
-.fade-up{opacity:0;transform:translateY(12px);animation:fadeUp .9s forwards}
-@keyframes fadeUp{to{opacity:1;transform:none}}
 </style>
 </head>
+
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
   <div class="brand">
-    <div class="logo-mark" aria-hidden="true">AV</div>
+    <div class="logo-mark">AV</div>
     <div>
-      <h1>Altria.Visuals</h1>
-      <div style="font-size:12px;color:var(--muted)">Fotografía profesional · Bilbao</div>
+      <h1 style="font-size:16px">Altria.Visuals</h1>
+      <div style="color:var(--muted);font-size:12px">Fotografía profesional · Bilbao</div>
     </div>
   </div>
 
-  <nav class="nav" aria-label="Navegación principal">
+  <nav class="nav">
     <a href="#servicios">Servicios</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#precios">Packs</a>
@@ -183,161 +266,84 @@ body{
 </div>
 
 <!-- HERO -->
-<section class="hero" role="banner" aria-label="Hero">
+<section class="hero">
   <div class="hero-inner fade-up">
-    <div class="hero-copy">
-      <h2>Transformamos la imagen de tu bar. <br>Fotografía que vende.</h2>
-      <p>Somos Altria.Visuals: estudiantes y jóvenes profesionales expertos en fotografía comercial para bares y locales. Trabajamos con creatividad, rapidez y precios pensados para negocios que quieren destacar.</p>
+    <h2>Transformamos la imagen de tu bar.<br>Fotografía que vende.</h2>
+    <p>Creamos contenido visual premium para bares y locales. Sesiones rápidas, calidad alta, entrega 48h y precios pensados para crecer.</p>
 
-      <div class="ctas">
-        <a class="btn btn-primary" href="#contacto">Reserva ya — 631 466 877</a>
-        <a class="btn btn-outline" href="#portfolio">Ver portfolio</a>
-      </div>
-
-      <div class="marquee" aria-hidden="true">
-        <div class="inner">Oferta especial para bares: sesión rápida + 10 fotos optimizadas para redes → entrega 48h • Descuentos por packs mensuales • Reserva hoy y gana visibilidad.</div>
-      </div>
-    </div>
-
-    <aside class="hero-card" aria-label="Reservas rápidas">
-      <h4>Reserva express</h4>
-      <p>Sesión rápida para locales — fotos profesionales listas para web y redes en 48 horas. Perfecto para menús, ambientes y platos estrella.</p>
-      <div class="quick-row">
-        <div style="flex:1">
-          <div style="font-size:12px;color:var(--muted)">Teléfono</div>
-          <div style="font-weight:700">631 466 877</div>
-        </div>
-        <div style="flex:1">
-          <div style="font-size:12px;color:var(--muted)">Email</div>
-          <div style="font-weight:700">Altria.Visuals@gmail.com</div>
-        </div>
-      </div>
-    </aside>
+    <a class="btn btn-primary" href="#contacto">Reserva ya — 631 466 877</a>
+    <a class="btn btn-outline" href="#portfolio" style="margin-left:10px">Ver portfolio</a>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section id="servicios" class="section fade-up">
-  <h3>Servicios diseñados para bares y locales</h3>
-  <p>Fotografía de interiores, platos y equipo. Sesiones para cartas online, redes sociales, anuncios y promociones. Entendemos el ritmo de la hostelería: trabajamos rápido, flexible y con resultados que aumentan reservas.</p>
-
-  <div class="about fade-up" style="margin-top:18px">
-    <div class="text">
-      <p><strong>¿Quiénes somos?</strong> Somos un equipo de estudiantes y profesionales jóvenes con ojo comercial. Nos especializamos en potenciar bares y locales mediante imágenes que transmiten atmósfera, sabor y experiencia. No solo hacemos fotos; creamos contenido que convierte visitantes en clientes.</p>
-      <p><strong>Nuestra promesa:</strong> estilismo mínimo, impacto máximo. Entregas rápidas. Paquetes pensados para hostelería.</p>
-
-      <div class="badges">
-        <div class="badge">Entrega 48h</div>
-        <div class="badge">Optimizado para IG & Web</div>
-        <div class="badge">Precios para pymes</div>
-      </div>
-    </div>
-
-    <div class="visual" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Ambiente bar" style="width:100%;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,0.6)">
-    </div>
-  </div>
+  <h3>Servicios para bares que quieren destacar</h3>
+  <p>Fotografía de interiores, platos y ambiente con estilo premium.</p>
 </section>
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="section fade-up">
   <h3>Portfolio destacado</h3>
-  <p>Imágenes que cuentan la historia de tu negocio: ambiente, platos y detalles que hacen que el cliente reserve.</p>
+  <p>Imágenes que elevan tu marca.</p>
 
-  <div class="gallery fade-up" aria-live="polite">
-    <img src="https://images.unsplash.com/photo-1541542684-59d2d7ca3d2a?auto=format&fit=crop&w=900&q=80" alt="Plato degustación">
-    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" alt="Bar iluminado">
-    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac2?auto=format&fit=crop&w=900&q=80" alt="Detalle de barra">
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1541542684-59d2d7ca3d2a?auto=format&fit=crop&w=900&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac2?auto=format&fit=crop&w=900&q=80" alt="">
   </div>
 </section>
 
-<!-- PRECIOS / PACKS -->
+<!-- PRECIOS -->
 <section id="precios" class="section fade-up">
   <h3>Packs & Precios</h3>
-  <p>Opciones para cualquier local: desde sesiones flash hasta paquetes mensuales para redes.</p>
 
-  <div class="prices">
-    <div class="pack">
-      <h4>Flash — 49€</h4>
-      <p>10 fotos profesionales optimizadas + entrega 48h. Ideal para actualizar carta y redes.</p>
+  <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:20px">
+    <div class="card" style="min-width:260px">
+      <h4 style="color:var(--gold)">Flash — 49€</h4>
+      <p>10 fotos optimizadas · entrega 48h</p>
     </div>
-    <div class="pack">
-      <h4>Estándar — 79€</h4>
-      <p>20 fotos + 1 mini-clip (15s) + retoque selecto. Paquete recomendado para promociones.</p>
-    </div>
-    <div class="pack">
-      <h4>Premium — 120€</h4>
-      <p>40 fotos + 1 vídeo de 30s + pack para redes (stories, carrusel). Perfecto para relanzamientos.</p>
-    </div>
-  </div>
 
-  <div class="testimonials" style="margin-top:22px">
-    <div class="testimonial">
-      <p>“Fotos que doblaron nuestras reservas en noches especiales.”</p><small>— La Terraza, Bilbao</small>
+    <div class="card" style="min-width:260px">
+      <h4 style="color:var(--gold)">Estándar — 79€</h4>
+      <p>20 fotos + mini-clip 15s.</p>
     </div>
-    <div class="testimonial">
-      <p>“Rápidos, amables y el resultado fue espectacular.”</p><small>— El Bistro</small>
+
+    <div class="card" style="min-width:260px">
+      <h4 style="color:var(--gold)">Premium — 120€</h4>
+      <p>40 fotos + vídeo 30s + pack redes.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto" class="section fade-up">
-  <h3>Contacto & Reserva</h3>
-  <p>Reserva fácil: escribe o llama y te damos opciones de fecha y presupuesto adaptado.</p>
+  <h3>Contacto & Reservas</h3>
 
-  <div class="contact-wrap">
-    <div>
-      <div class="contact-card">
-        <h4>Contacto directo</h4>
-        <div style="margin-top:8px">
-          <div style="font-size:14px;color:var(--muted)">Teléfono</div>
-          <div style="font-weight:700;font-size:18px">631 466 877</div>
+  <div class="card" style="max-width:420px;margin:auto;margin-top:20px;text-align:center">
+    <p style="color:var(--muted)">Reserva por teléfono o email:</p>
+    <p style="font-size:22px;font-weight:700;margin-top:6px">631 466 877</p>
+    <p style="font-size:17px;margin-top:6px">altria.visuals@gmail.com</p>
 
-          <div style="margin-top:10px;font-size:14px;color:var(--muted)">Email</div>
-          <div style="font-weight:700;font-size:16px">Altria.Visuals@gmail.com</div>
-        </div>
-
-        <a href="mailto:Altria.Visuals@gmail.com" style="display:inline-block;margin-top:12px" class="btn btn-outline">Enviar email</a>
-      </div>
-
-      <div style="margin-top:14px;color:var(--muted);font-size:14px">
-        <strong>¿Eres bar?</strong> Pregunta por nuestras promociones mensuales: sesiones recurrentes con descuentos y contenido para stories y menús digitales.
-      </div>
-    </div>
-
-    <aside class="contact-card">
-      <h4>¿Quieres una prueba rápida?</h4>
-      <p style="color:var(--muted)">Reservas express disponibles de lunes a jueves. 15% de descuento en tu primera sesión si reservas antes de 7 días.</p>
-      <div style="margin-top:12px">
-        <a class="btn btn-primary" href="tel:+34631466877">Llamar ahora</a>
-      </div>
-    </aside>
+    <a class="btn btn-primary" href="tel:+34631466877" style="margin-top:16px">Llamar ahora</a>
   </div>
 </section>
 
-<!-- Footer / smallprint -->
-<footer class="footer">
-  <div class="legal">
-    © <strong>Altria.Visuals</strong> · Fotografía profesional para bares y locales · Tel: 631 466 877 · Email: Altria.Visuals@gmail.com
-    <div style="margin-top:8px;color:#9a9a9a;font-size:12px;line-height:1.3">
-      Aviso: algunas imágenes usadas en esta demo son de muestra (Unsplash). Los resultados reales varían según espacio, luz y estilismo. Altria.Visuals ofrece sesiones personalizadas y asesoría para potenciar tu presencia online.
-    </div>
-  </div>
+<!-- FOOTER -->
+<footer style="text-align:center;padding:26px;color:#999;margin-top:40px">
+  © Altria.Visuals — Fotografía profesional para bares
 </footer>
 
-<!-- Small script: simple fade-in on scroll -->
+<!-- SCRIPT ANIMACIONES -->
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  const els = document.querySelectorAll('.fade-up');
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.style.animationDelay = (e.target.dataset.delay||'0s'); e.target.classList.add('visible'); e.target.style.opacity = 1; e.target.style.transform = 'none'; }
-    });
-  }, {threshold:0.12});
-  els.forEach((el,i)=>{ el.dataset.delay = (i*0.06)+'s'; obs.observe(el); el.style.opacity=0; el.style.transform='translateY(12px)'; });
-});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add("visible"); }
+  })
+},{threshold:0.15});
+document.querySelectorAll(".fade-up").forEach(el=>obs.observe(el));
 </script>
 
 </body>
 </html>
+
